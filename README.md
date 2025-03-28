@@ -48,22 +48,22 @@ You can install Postman via this website: https://www.postman.com/downloads/
     (You might want to use `cargo check` if you only need to verify your work without running the app.)
 
 ## Mandatory Checklists (Publisher)
--   [ ] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
+-   [X] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
 -   **STAGE 1: Implement models and repositories**
-    -   [ ] Commit: `Create Subscriber model struct.`
-    -   [ ] Commit: `Create Notification model struct.`
-    -   [ ] Commit: `Create Subscriber database and Subscriber repository struct skeleton.`
-    -   [ ] Commit: `Implement add function in Subscriber repository.`
-    -   [ ] Commit: `Implement list_all function in Subscriber repository.`
-    -   [ ] Commit: `Implement delete function in Subscriber repository.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
+    -   [X] Commit: `Create Subscriber model struct.`
+    -   [X] Commit: `Create Notification model struct.`
+    -   [X] Commit: `Create Subscriber database and Subscriber repository struct skeleton.`
+    -   [X] Commit: `Implement add function in Subscriber repository.`
+    -   [X] Commit: `Implement list_all function in Subscriber repository.`
+    -   [X] Commit: `Implement delete function in Subscriber repository.`
+    -   [X] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [X] Commit: `Create Notification service struct skeleton.`
+    -   [X] Commit: `Implement subscribe function in Notification service.`
+    -   [X] Commit: `Implement subscribe function in Notification controller.`
+    -   [X] Commit: `Implement unsubscribe function in Notification service.`
+    -   [X] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [X] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -84,5 +84,21 @@ This is the place for you to write reflections:
 3.  Singleton pattern memang membantu agar ada satu instance global, tapi tidak cukup jika kita butuh akses data yang bisa ditulis oleh banyak thread. DashMap sudah mengatasi masalah ini dengan aman dan efisien. Jadi, penggunaan DashMap dalam variabel statis SUBSCRIBERS adalah pilihan yang tepat, baik dari sisi performa maupun keamanan.
 
 #### Reflection Publisher-2
+1. Kita memisahkan Service dan Repository dari Model agar setiap komponen dalam aplikasi memiliki tanggung jawab yang jelas dan terpisah. Service berfungsi untuk menangani logika bisnis, sehingga tidak tercampur dengan cara data disimpan atau diambil. Sementara itu, Repository fokus pada pengelolaan data, seperti menyimpan, mengambil, atau menghapus dari sumber data. Pendekatan ini membuat kode lebih modular, mudah diuji, dan lebih mudah dirawat dalam jangka panjang.
+
+2. Jika kita hanya menggunakan Model tanpa memisahkan Service dan Repository, maka Model akan menanggung terlalu banyak tanggung jawab. Hal ini menyebabkan kode menjadi kompleks dan sulit dirawat. Dalam aplikasi BambangShop, Model seperti Program, Subscriber, dan Notification akan saling berinteraksi secara langsung, sehingga setiap perubahan kecil pada satu Model bisa berdampak pada seluruh alur aplikasi. Kompleksitas akan meningkat karena tidak ada Service dan Repository yang menjadi jembatan komunikasi.
+
+3. Postman sangat membantu saya untuk mengetes proyek aplikasi, terutama dalam pengujian API. Dengan Postman, saya bisa dengan mudah mengirim request HTTP ke endpoint yang saya buat, mengatur header, body, dan melihat respons secara real-time. Tool ini sangat berguna untuk memverifikasi bahwa logika yang saya bangun di service dan controller bekerja sesuai ekspektasi, tanpa perlu membuat frontend terlebih dahulu.
+
+
+
+
+
+
+
+
+
+
+
 
 #### Reflection Publisher-3
