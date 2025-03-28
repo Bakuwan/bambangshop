@@ -65,11 +65,11 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [X] Commit: `Implement unsubscribe function in Notification controller.`
     -   [X] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
-    -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
-    -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
-    -   [ ] Commit: `Implement publish function in Program service and Program controller.`
-    -   [ ] Commit: `Edit Product service methods to call notify after create/delete.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+    -   [X] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
+    -   [X] Commit: `Implement notify function in Notification service to notify each Subscriber.`
+    -   [X] Commit: `Implement publish function in Program service and Program controller.`
+    -   [X] Commit: `Edit Product service methods to call notify after create/delete.`
+    -   [X] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -90,15 +90,9 @@ This is the place for you to write reflections:
 
 3. Postman sangat membantu saya untuk mengetes proyek aplikasi, terutama dalam pengujian API. Dengan Postman, saya bisa dengan mudah mengirim request HTTP ke endpoint yang saya buat, mengatur header, body, dan melihat respons secara real-time. Tool ini sangat berguna untuk memverifikasi bahwa logika yang saya bangun di service dan controller bekerja sesuai ekspektasi, tanpa perlu membuat frontend terlebih dahulu.
 
-
-
-
-
-
-
-
-
-
-
-
 #### Reflection Publisher-3
+1. Pada kasus tutorial ini, pola Observer yang digunakan mengikuti model Push. Dalam model ini, publisher secara otomatis mengirimkan informasi atau pembaruan kepada subscriber begitu ada perubahan atau kejadian tertentu. Misalnya, ketika ada produk baru atau produk yang diubah, publisher akan langsung mengirimkan notifikasi ke semua subscriber tanpa harus menunggu permintaan dari mereka.
+
+2. Jika kita menggunakan model Pull, maka subscriber tidak menerima notifikasi secara otomatis saat peristiwa terjadi, melainkan mereka harus secara aktif memeriksa publisher untuk mendapatkan pembaruan. Kelebihan dari model Pull adalah subscriber dapat mengontrol kapan mereka ingin mendapatkan pembaruan data, yang bisa mengurangi jumlah data yang diterima dan menghemat sumber daya. Kekurangannya adalah model ini bisa menyebabkan latensi dalam pengiriman data, karena pembaruan hanya akan diterima saat subscriber melakukan permintaan. 
+
+3. Jika kita tidak menggunakan multi-threading dalam proses notifikasi, program bisa berjalan lambat, terutama ketika jumlah subscriber sangat banyak. Tanpa multi-threading, proses notifikasi akan dijalankan secara berurutan, sehingga setiap notifikasi harus selesai diproses sebelum notifikasi berikutnya bisa dikirim. Hal ini bisa menyebabkan masalah karena proses notifikasi akan melambat dan bahkan dapat menyebabkan time-out atau kegagalan.
