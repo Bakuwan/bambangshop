@@ -77,6 +77,11 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. Pada kasus BambangShop, karena hanya ada satu jenis Subscriber yang tidak memiliki perilaku bervariasi, maka kita tidak memerlukan interface/trait, cukup satu Model Struct.
+
+2. Penggunaan DashMap lebih baik daripada Vec karena id dan url bersifat unik, sehingga DashMap bisa mencegah duplikasi. Selain itu, DashMap lebih efisien karena memiliki kompleksitas rata-rata O(1) dibandingkan Vec yang membutuhkan operasi linear dengan kompleksitas O(n).
+
+3.  Singleton pattern memang membantu agar ada satu instance global, tapi tidak cukup jika kita butuh akses data yang bisa ditulis oleh banyak thread. DashMap sudah mengatasi masalah ini dengan aman dan efisien. Jadi, penggunaan DashMap dalam variabel statis SUBSCRIBERS adalah pilihan yang tepat, baik dari sisi performa maupun keamanan.
 
 #### Reflection Publisher-2
 
